@@ -1,0 +1,17 @@
+-- Create table
+create table DDYTEST
+(
+  ID      NUMBER(4) not null,
+  NAME    VARCHAR2(10),
+  AGE     NUMBER(4) default 0,
+  ADDRESS VARCHAR2(30)
+)
+
+-- Add comments to the columns 
+comment on column DDYTEST.ID
+  is 'Ö÷¼ü';
+comment on column DDYTEST.NAME
+  is 'ÐÕÃû';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table DDYTEST
+  add constraint PK_DDYTEST primary key (ID)

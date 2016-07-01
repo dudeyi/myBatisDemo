@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.deyi.model.mapping.userMapper">
+	<select id="getUserById" parameterType="int" resultType="com.deyi.model.User">
+		<!-- #{ID} 是其他值也可 -->
+		SELECT * FROM ddyTest WHERE id = #{IDssss}
+	</select>
+
+	<select id="getUserListByName" parameterType="string"
+		resultType="com.deyi.model.User">
+		SELECT * FROM ddyTest WHERE name = #{IDssss}
+	</select>
+
+	<insert id="addUser" parameterType="com.deyi.model.User">
+		INSERT INTO ddytest (ID,
+		NAME, age, address) VALUES (#{id},#{name},#{age},#{address})
+	</insert>
+
+	<update id="updateUserById" parameterType="com.deyi.model.User">
+	<!-- 大小写敏感 -->
+		UPDATE ddytest SET name=#{name},age=#{age},address=#{address}  WHERE ID=#{id}
+	</update>
+	
+	<delete id="deleteUserById">DELETE FROM ddytest WHERE ID = #{id} </delete>
+</mapper>
